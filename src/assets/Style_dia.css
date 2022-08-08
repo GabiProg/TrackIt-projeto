@@ -1,0 +1,16 @@
+.muda-cor{
+    background: #CFCFCF;
+    border: 1px solid #d5d5d5;
+    color: #FFFFFF;
+}
+.normal{
+    background: #FFFFFF;
+    border: 1px solid #CFCFCF;
+    color: #dbdbdb;
+}
+.marcar{
+    background: #8FC549;
+}
+.desmarcar{
+    background: #ebebeb;
+}

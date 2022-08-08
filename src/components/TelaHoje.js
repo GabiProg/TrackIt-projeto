@@ -113,6 +113,14 @@ export default function TelaHoje() {
   let month = now.month();
   let day = now.format("dddd");
 
+  function Porcentagem(){
+  if(valueClick > 0){
+    return(<PorcentagemMensagem> %{valueClick} dos hábitos concluídos </PorcentagemMensagem>);
+  } else {
+    return(<PorcentagemTexto>Nenhum hábito concluído ainda</PorcentagemTexto>);
+  }
+  }
+
   return (
     <>
       <Conteiner>
@@ -120,7 +128,7 @@ export default function TelaHoje() {
         <Data>
           {day}, {date}/{month + 1}
         </Data>
-        <PorcentagemTexto>Nenhum hábito concluído ainda</PorcentagemTexto>
+        {Porcentagem()}
         {listarHabitosTelaHoje.map((item) => (
           <TelaHojeItens
             key={item.id}
@@ -166,6 +174,16 @@ const PorcentagemTexto = styled.div`
   line-height: 22px;
   color: #bababa;
   padding: 0 0 28px 17px;
+`;
+
+const PorcentagemMensagem = styled.div`
+font-family: "Lexend Deca";
+font-style: normal;
+font-weight: 400;
+font-size: 17.976px;
+line-height: 22px;
+color: #8FC549;
+padding: 0 0 28px 17px;
 `;
 
 const HabitosMarcados = styled.div`
